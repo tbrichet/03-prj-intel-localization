@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- <html lang="ar" dir="rtl"> -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Add Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7D4prO8iF5iFZZj0vGJr69jIMpDg9P2Lt" crossorigin="anonymous">
+  <!-- Added Bootstrap RTL -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.rtl.min.css" integrity="sha384-q8+l9TmX3RaSz3HKGBmqP2u5MkgeN7HrfOJBLcTgZsQsbrx8WqqxdA5PuwUV9WIx" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
 
   <!-- Header / Hero Section -->
   <header>
-    <div>
+    <div class="herocontent">
+      <!-- Ask Copilot to teach you about `.svg` 🙂 -->
       <img src="img/intel-header-logo.svg" alt="Intel Logo" />
       <!-- Main Heading -->
       <h1>
         Sustainability Through the Ages
       </h1>
-
+      <hr /> <!-- Add a horizontal line here -->
       <!-- Subheading / Description -->
       <p>
         Explore Intel's journey through time, discovering how our commitment
@@ -27,7 +35,7 @@
   </header>
 
   <!-- Timeline Cards Section -->
-  <section>
+  <section class="timeline-section">
     <!-- Card 1: 1968 -->
     <div>
       <h2>1968</h2>
@@ -79,7 +87,7 @@
     <div>
       <h2>2006</h2>
       <h3>Peak GHG Emissions</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
+      <img src="img/2006.jpg" alt="Placeholder Image" />
       <p>
         This year marks Intel's highest annual greenhouse gas emissions 
         for operations. Over subsequent years, Intel invests heavily in 
@@ -92,7 +100,7 @@
     <div>
       <h2>2020</h2>
       <h3>RISE Strategy</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
+      <img src="img/2020.jpg" alt="Placeholder Image" />
       <p>
         Intel launches its RISE (Responsible, Inclusive, Sustainable, 
         Enabling) strategy and 2030 goals, aiming to drive industry-wide 
@@ -104,7 +112,7 @@
     <div>
       <h2>2022</h2>
       <h3>Net-Zero By 2040</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
+      <img src="img/2022.jpg" alt="Placeholder Image" />
       <p>
         Intel announces its commitment to achieve net-zero greenhouse 
         gas emissions (Scope 1 and 2) across its global operations 
@@ -116,7 +124,7 @@
     <div>
       <h2>2023</h2>
       <h3>Renewable Electricity</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
+      <img src="img/2023.jpg" alt="Placeholder Image" />
       <p>
         The company achieves 99% renewable electricity usage worldwide, 
         helping to drastically lower carbon emissions and driving progress 
@@ -128,7 +136,7 @@
     <div>
       <h2>2024</h2>
       <h3>Sustainability Summit</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
+      <img src="img/2024.jpg" alt="Placeholder Image" />
       <p>
         Intel hosts its first Sustainability Summit, uniting suppliers, 
         government officials, and industry leaders to collaborate on 
@@ -136,56 +144,82 @@
       </p>
     </div>
   </section>
+  <div class="timeline-footer">
+    <p>Scroll to view timeline | Hover over cards to learn more!</p>
+  </div>
 
-  <!-- 3-Column Content Section -->
-  <section>
-    <div>
-      
+  <!-- 3 Column Section -->
+  <section class="container my-5">
+    <div class="row">
       <!-- Column 1 -->
-      <div>
-        <h2>RISE Strategy</h2>
-        <p>
-          Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy, 
-          Intel sets ambitious 2030 goals, including driving industry-wide 
-          progress on climate action, water stewardship, and waste reduction.
-        </p>
-        <!-- Learn More Button -->
-        <a href="#">Learn More</a>
+      <div class="info-column col-12 col-md-4">
+        <h3 class="column-header"><i class="bi bi-bar-chart"></i> RISE Strategy</h3>
+        <p>Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy, Intel sets ambitious 2030 goals, including driving industry-wide progress on climate action, water stewardship, and waste reduction.</p>
+        <button id="modal1btn" class="learnmore btn btn-primary">Learn More</button>
       </div>
-
       <!-- Column 2 -->
-      <div>
-        <h2>Commitment</h2>
-        <p>
-          In 2022, Intel pledged to achieve net-zero greenhouse gas emissions 
-          (Scope 1 and 2) by 2040. This commitment builds on decades of 
-          environmental initiatives and partnerships across the semiconductor 
-          industry.
-        </p>
-        <!-- Learn More Button -->
-        <a href="#">Learn More</a>
+      <div class="info-column col-12 col-md-4">
+        <h3 class="column-header"><i class="bi bi-globe"></i> Commitment</h3>
+        <p>In 2022, Intel pledged to achieve net-zero greenhouse gas emissions (Scope 1 and 2) by 2040. This commitment builds on decades of environmental initiatives and partnerships across the semiconductor industry.</p>
+        <button id="modal2btn" class="learnmore btn btn-primary">Learn More</button>
       </div>
-
       <!-- Column 3 -->
-      <div>
-        <h2>Water &amp; Waste</h2>
-        <p>
-          Intel conserves billions of gallons of water annually and 
-          collaborates with local communities to restore watersheds.
-          Intel also upcycles and recycles materials to reduce waste and 
-          advance a circular economy.
-        </p>
-        <!-- Learn More Button -->
-        <a href="#">Learn More</a>
+      <div class="info-column col-12 col-md-4">
+        <h3 class="column-header"><i class="bi bi-droplet"></i> Water & Waste</h3>
+        <p>Intel conserves billions of gallons of water annually and collaborates with local communities to restore watersheds. Intel also upcycles and recycles materials to reduce waste and advance a circular economy.</p>
+        <button id="modal3btn" class="learnmore btn btn-primary">Learn More</button>
       </div>
-
     </div>
   </section>
 
-  <!-- Subscription Form -->
-  <section>
-    <h2>Subscribe to our Newsletter</h2>
-    <!-- Add form here -->
+  <!-- Modals -->
+  <div id="modal1" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span id="close1">&times;</span>
+      <h4>RISE Strategy</h4>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt sint tenetur obcaecati, nihil minus suscipit commodi ipsum architecto autem quisquam ex animi temporibus similique! Officia, laudantium molestiae? Excepturi, incidunt labore?</p>
+    </div>
+  </div>
+
+  <div id="modal2" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span id="close2">&times;</span>
+      <h4>Commitment</h4>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt sint tenetur obcaecati, nihil minus suscipit commodi ipsum architecto autem quisquam ex animi temporibus similique! Officia, laudantium molestiae? Excepturi, incidunt labore?</p>
+    </div>
+  </div>
+
+  <div id="modal3" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span id="close3">&times;</span>
+      <h4>Water & Waste</h4>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt sint tenetur obcaecati, nihil minus suscipit commodi ipsum architecto autem quisquam ex animi temporibus similique! Officia, laudantium molestiae? Excepturi, incidunt labore?</p>
+    </div>
+  </div>
+ 
+
+  <!-- Newsletter Signup -->
+  <section class="container my-5 newsletter text-center" aria-labelledby="newsletter-heading">
+    <h5 id="newsletter-heading"><i class="bi bi-envelope"></i> Subscribe to our Sustainability Newsletter</h5>
+    <form class="d-flex justify-content-center align-items-center mt-3" aria-label="Newsletter Signup Form">
+      <label for="email-input" class="visually-hidden">Email Address</label>
+      <input type="email" id="email-input" class="form-control me-2" placeholder="Enter your email" style="max-width: 300px;" aria-required="true" />
+      <button type="submit" class="btn btn-primary" aria-label="Subscribe to Newsletter">Subscribe</button>
+    </form>
   </section>
+
+  <footer>
+    <p>&copy 2025 Intel Corporation. All rights reserved.</p>
+    <div id="google_translate_element"></div>
+  </footer>
+  <!-- Add Bootstrap JS -->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76A2YpOJpPurK2e9cF2JoQk2F9CUGIW2vE1p5Forn1IF4z7x4IvoCZ5hgjQgEx" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

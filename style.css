@@ -1,0 +1,346 @@
+/* Add your CSS here */
+
+/* Apply Roboto font to the entire page */
+body {
+  font-family: 'Roboto', sans-serif; /* Use Roboto font with a fallback to sans-serif */
+  margin: 0 auto; /* Center the page horizontally */
+  background-color: #F5F5F5 !important;
+}
+
+/* Hero Section Styles */
+header {
+  background: linear-gradient(to right, #0091D4, #004581); /* Updated gradient background */
+  color: white; /* White text for contrast */
+  text-align: center; /* Center align text */
+  padding: 50px 20px; /* Add spacing around the content */
+}
+
+header img {
+  max-width: 150px; /* Limit logo size */
+  margin-bottom: 20px; /* Space below the logo */
+}
+
+header h1 {
+  font-size: 2.5em; /* Larger font size for the main heading */
+  margin-bottom: 10px; /* Space below the heading */
+  text-transform: uppercase; /* Capitalize all letters */
+  text-align: center; /* Center the text */
+  word-wrap: break-word; /* Break long words to prevent overflow */
+  overflow-wrap: break-word; /* Ensure proper wrapping for long words */
+}
+
+header p {
+  font-size: 1.2em; /* Slightly larger font for the description */
+  line-height: 1.5; /* Improve readability */
+  margin: 0 auto; /* Center the paragraph */
+  max-width: 600px; /* Limit the width of the text */
+}
+
+/* Style for the horizontal line in the hero section */
+header hr {
+  border: none; /* Remove default border */
+  border-top: 3px solid #009bdb; /* Add a blue line */
+  width: 50px; /* Set the width of the line */
+  margin: 10px auto; /* Center the line and add spacing */
+}
+
+header div {
+  max-width: 50%; /* Limit the width of the content to 50% */
+  margin: 0 auto; /* Center the content horizontally */
+}
+
+/* Enable horizontal scrolling with scroll snap */
+.timeline-section {
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: nowrap; /* Prevent wrapping to the next row */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 20px; /* Add spacing between cards */
+  padding: 20px; /* Add padding around the section */
+  margin: 0 20px; /* Remove default margin */
+  scroll-snap-type: x mandatory; /* Enable scroll snap for horizontal navigation */
+}
+
+/* Card container styles for square shape and hover effect */
+.timeline-section div {
+  background-color: white; /* White background for the cards */
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 20px; /* Add spacing inside the cards */
+  margin: 20px auto; /* Add spacing between cards and center them */
+  flex: 0 0 calc(25% - 20px); /* Show up to 4 cards at a time on large screens */
+  max-width: calc(25% - 20px); /* Ensure cards don't exceed 25% width */
+  box-sizing: border-box; /* Include padding and border in width */
+  text-align: left; /* Left-align the text in each card */
+  position: relative; /* Set position for overlay */
+  overflow: hidden; /* Ensure overlay stays within the card */
+  aspect-ratio: 1 / 1; /* Make the cards square-shaped */
+  scroll-snap-align: start; /* Snap each card to the start of the viewport */
+}
+
+.timeline-section div::before {
+  content: ""; /* Empty content for the overlay */
+  position: absolute; /* Position overlay over the card */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00447f; /* Dark blue overlay */
+  opacity: 0; /* Start with invisible overlay */
+  transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+  z-index: 1; /* Place overlay above card content */
+}
+
+.timeline-section div:hover::before {
+  opacity: 0.95; /* Make overlay almost opaque on hover */
+}
+
+.timeline-section div:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Add a stronger shadow on hover */
+  transition: box-shadow 0.3s ease; /* Smooth transition for the shadow effect */
+}
+
+.timeline-section div img {
+  border-radius: 4px; /* Slightly round the image corners */
+  margin-bottom: 15px; /* Add space below the image */
+  width: 250px;
+  height: 100px;
+  max-width: 100%; /* Make images responsive */
+  object-fit: cover;
+}
+
+.timeline-section div h2 {
+  font-size: 1.5em; /* Slightly larger font for the year */
+  color: #004581; /* Use a dark blue color for the year */
+  margin-bottom: 10px; /* Add space below the year */
+}
+
+section div h3 {
+  font-size: 1.2em; /* Slightly larger font for the title */
+  color: #333333; /* Very dark gray for the h3 text */
+  margin-bottom: 10px; /* Add space below the title */
+}
+
+.timeline-section div p {
+  font-size: 1em; /* Standard font size for the description */
+  line-height: 1.5; /* Improve readability */
+  color: white; /* Make the text white */
+  position: absolute; /* Position the text absolutely */
+  top: 10px; /* Place the text at the top of the card */
+  left: 10px; /* Add some padding from the left */
+  right: 10px; /* Add some padding from the right */
+  text-align: left; /* Align the text to the left */
+  opacity: 0; /* Hide text initially */
+  transition: opacity 0.3s ease; /* Smooth transition for text appearance */
+  z-index: 2; /* Place text above the overlay */
+}
+
+.timeline-section div:hover p {
+  opacity: 1; /* Show text on hover */
+}
+
+.timeline-section div::after {
+  content: ""; /* Empty content for the shimmer effect */
+  position: absolute; /* Position shimmer over the card */
+  top: 0;
+  left: -100%; /* Start shimmer off-screen */
+  width: 100%; /* Full width of the card */
+  height: 100%; /* Full height of the card */
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  ); /* Shimmer gradient */
+  opacity: 0; /* Start with invisible shimmer */
+  transition: opacity 0.3s ease; /* Smooth transition for shimmer visibility */
+  z-index: 2; /* Place shimmer above the card content */
+}
+
+.timeline-section div:hover::after {
+  opacity: 1; /* Make shimmer visible on hover */
+  animation: shimmer 1.5s infinite; /* Animate the shimmer */
+}
+
+
+.timeline-footer p {
+  text-align: center; /* Center the text */
+  color: darkslategray;
+}
+
+
+/* Style for buttons in the 3-column section */
+.container .btn {
+  color: #0091D4; /* Light blue text */
+  border: 2px solid #0091D4; /* Light blue outline */
+  background-color: transparent; /* Clear background */
+  border-radius: 0; /* Remove rounded corners for sharp edges */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+  width: 120px;
+}
+
+.container .btn:hover {
+  background-color: #0091D4; /* Light blue background on hover */
+  color: white; /* White text on hover */
+}
+
+.column-header {
+  font-size: 1.5em;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%; /* Start shimmer off-screen */
+  }
+  100% {
+    left: 100%; /* Move shimmer across the card */
+  }
+}
+
+/* MODALS */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgb(0, 69, 129, 0.5);
+  margin: auto;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  /* background-color: #fefefe; */
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50vw !important;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.newsletter {
+  background-color: white !important;
+  width: 100vw;
+  padding: 20px;
+}
+
+.newsletter .btn {
+  background-color: #0091D4; /* Light blue background on hover */
+  color: white; /* White text on hover */
+  padding: 10px 20px; /* Add padding for better appearance */
+  border-radius: 0; /* Remove rounded corners for sharp edges */
+}
+
+/* Style for the subscribe button */
+.newsletter .btn:hover {
+  color: #0091D4; /* Light blue text */
+  border: 2px solid #0091D4; /* Light blue outline */
+  background-color: transparent; /* Clear background */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+
+/* Add spacing between the email input and the subscribe button */
+.newsletter form .form-control {
+  margin-right: 10px; /* Add space to the right of the input field */
+}
+
+footer {
+  text-align: center;
+  /* background-color: white; */
+  width: 100vw;
+}
+
+footer p {
+  color: slategray;
+  font-size: 0.8em; /* Smaller font size for footer text */
+  margin: 10px 0; /* Add spacing above and below the text */
+  padding: 10px; /* Add padding for better appearance */
+  background-color: #f5f5f5; /* Light gray background for footer */
+}
+
+/* Add focus styles for buttons and inputs */
+button:focus, .form-control:focus {
+  outline: 3px solid #0091D4; /* Add a visible blue outline */
+  outline-offset: 2px; /* Add space between the outline and the element */
+}
+
+
+
+/* Medium screens: Show up to 2 cards at a time */
+@media (max-width: 768px) {
+  .timeline-section div {
+    flex: 0 0 calc(50% - 20px); /* Show up to 2 cards at a time */
+    max-width: calc(50% - 20px);
+  }
+
+  .info-column {
+    text-align: center;
+  }
+}
+
+/* Small screens: Stack cards vertically */
+@media (max-width: 480px) {
+  .timeline-section {
+    flex-wrap: wrap; /* Allow wrapping for vertical stacking */
+    overflow-x: visible; /* Disable horizontal scrolling */
+  }
+
+  .timeline-section div {
+    flex: 1 1 100%; /* Stack cards vertically */
+    max-width: 100%;
+  }
+
+  header {
+    width: 100%; /* Make the hero section span the full width */
+    padding: 20px; /* Adjust padding for smaller screens */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    text-align: center; /* Center all content */
+  }
+
+  header div {
+    max-width: 80%;
+    padding-bottom: 10px;
+  }
+
+  header h1 {
+    font-size: 1.5em; /* Adjust font size for smaller screens */
+    text-align: center;
+    /* word-wrap: break-word; */
+    /* overflow-wrap: break-word; */
+    /* width: 300px;
+    margin: auto; */
+  }
+
+  header p {
+    word-wrap: break-word; /* Break long words to prevent overflow */
+    overflow-wrap: break-word; /* Ensure text wraps properly */
+    text-align: center; /* Center the paragraph text */
+  }
+
+  .info-column {
+    text-align: center;
+  }
+}
+
+
